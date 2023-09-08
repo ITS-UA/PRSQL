@@ -11,7 +11,7 @@ begin
 		delete from srv.employees em where em.employee_id = p_employee_id;
 		commit;
 	else 
-		raise_application_error(-20004, 'переданий employee_id не існує');
+		їraise_application_error(-20004, 'переданий employee_id='||p_employee_id||' не існує');
 	end case;
 
 end;
