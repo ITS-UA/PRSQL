@@ -48,5 +48,7 @@ begin
                 p_salary);
         commit;
     end case;
-
+    
+    srv.add_log('add_employee', 'Cпівробітника ' || v_employee_id || ' успішно додано', SYSDATE);
+    
 end add_employee;
