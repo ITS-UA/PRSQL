@@ -3,7 +3,7 @@ select dba.username,
        count(dba.sessionid) as count_session, 
        min(dba.timestamp) as min_timestamp, 
        tmp.max_timestamp,
-       round(( tmp.max_timestamp- min(dba.timestamp))*86400, 2) as sec_in_system     
+       round((tmp.max_timestamp- min(dba.timestamp))*24,2) as hours_in_system
 from dba_audit_trail dba
 left join (select tba.username,
             max(tba.timestamp) as max_timestamp 
