@@ -1,0 +1,1 @@
+GRANT EXECUTE ON own_func TO srv;
