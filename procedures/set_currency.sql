@@ -17,7 +17,8 @@ begin
            cur.cc as cur_txt, 
            cur.rate as cur_value,
            cur.exchangedate as cur_date
-    from srv.currencies_v cur;
+    from srv.currencies_v cur
+    where cur.cc in (select * FROM TABLE(it_skills.own_func.table_from_list(get_param('LIST_CUR'))));
     commit;
     
 end set_currency;
