@@ -10,7 +10,7 @@ begin
          delete from srv.jobs j where j.job_id = p_job_id;
          commit;
     else 
-         raise_application_error(-20004, 'JOB_ID значення не існує');
+         raise_application_error(-20004, 'JOB_ID Р·РЅР°С‡РµРЅРЅСЏ РЅРµ С–СЃРЅСѓС”');
     end case;
 
 end;
